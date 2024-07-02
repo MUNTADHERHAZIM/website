@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ category.name }}</h1>
+<img src="{{ category.image.url }}" alt="{{ category.name }}">
+<p>{{ category.description }}</p>
+<h2>Articles in {{ category.name }}</h2>
+<ul>
+    {% for article in category.article_set.all %}
+    <li><a href="{% url 'article_detail' article.slug %}">{{ article.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

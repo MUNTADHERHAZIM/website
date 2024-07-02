@@ -1,0 +1,135 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media print {
+    .control-buttons,
+    .sidebar {
+        display: none;
+    }
+}
+
+.social-share {
+    margin: 20px 0;
+}
+
+.social-share a {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.social-share a i {
+    margin-right: 5px;
+}
+
+
+
+@media print {
+    /* إخفاء الأزرار والعناصر غير المطلوبة عند الطباعة */
+    .social-share, .like-button, .print-button, .copy-url-button, form, .reply-button, .reply-form {
+        display: none;
+    }
+
+    /* تحسين التنسيق للطباعة */
+    body {
+        font-family: Arial, sans-serif;
+        color: #000;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #000;
+    }
+
+    p {
+        font-size: 12pt;
+        margin: 0 0 1rem 0;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .article-metadata {
+        margin-bottom: 2rem;
+    }
+
+    .tags, .comments, .related-articles, .search-form {
+        margin-top: 2rem;
+    }
+
+    .comments {
+        page-break-before: always;
+    }
+}

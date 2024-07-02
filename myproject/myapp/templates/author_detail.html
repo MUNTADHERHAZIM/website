@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ author.name }}{% endblock %}
+
+{% block content %}
+<div class="author-profile">
+    <h1>{{ author.name }}</h1>
+    <img src="{{ author.profile_picture.url }}" alt="{{ author.name }}" style="width:100px;height:100px;border-radius:50%;">
+    <p>{{ author.bio }}</p>
+    <p>Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+    {% if author.website %}
+    <p>Website: <a href="{{ author.website }}" target="_blank">{{ author.website }}</a></p>
+    {% endif %}
+    {% if author.twitter_handle %}
+    <p>Twitter: <a href="https://twitter.com/{{ author.twitter_handle }}" target="_blank">{{ author.twitter_handle }}</a></p>
+    {% endif %}
+    {% if author.facebook_handle %}
+    <p>Facebook: <a href="https://facebook.com/{{ author.facebook_handle }}" target="_blank">{{ author.facebook_handle }}</a></p>
+    {% endif %}
+    {% if author.instagram_handle %}
+    <p>Instagram: <a href="https://instagram.com/{{ author.instagram_handle }}" target="_blank">{{ author.instagram_handle }}</a></p>
+    {% endif %}
+</div>
+
+<h2>Articles by {{ author.name }}</h2>
+<ul class="article-list">
+    {% for article in articles %}
+    <li><a href="{% url 'article_detail' article.slug %}">{{ article.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h3>Author Statistics:</h3>
+<p>Total Articles: {{ articles.count }}</p>
+<p>Total Views: {{ total_views }}</p>
+<p>Total Comments: {{ total_comments }}</p>
+
+<style>
+.author-profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.author-profile img {
+    margin-bottom: 15px;
+}
+
+.article-list {
+    list-style: none;
+    padding: 0;
+}
+
+.article-list li {
+    margin-bottom: 10px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Any JavaScript related to author page can be added here
+});
+</script>
+{% endblock %}
